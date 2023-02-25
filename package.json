@@ -8,9 +8,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "tsc -p .",
+    "build:frontend": "cd frontend && yarn build",
+    "build": "yarn build:frontend && tsc -p .",
+    "postbuild": "cd frontend && yarn movebuild",
     "dev": "ts-node -r dotenv/config bin/server.ts",
-    "start": "node dist/bin/server.js"
+    "start": "node dist/bin/server.js",
+    "preinstall": "cd frontend && yarn"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
