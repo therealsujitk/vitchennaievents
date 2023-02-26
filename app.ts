@@ -3,7 +3,7 @@ import apiRouter from './api';
 
 const app = express();
 
-app.use('/api', apiRouter);
+app.use('/profile/api', apiRouter);
 app.use('/profile', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {

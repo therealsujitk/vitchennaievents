@@ -259,7 +259,7 @@ export default class App extends React.Component<{}, AppState> {
         'x-password': password,
       };
 
-      const response = await new Network().doPost("/api/latest/user/login", { headers: credentials, body: {} });
+      const response = await new Network().doPost("/profile/api/latest/user/login", { headers: credentials, body: {} });
       
       const userId = response.user.id;
       const name = response.user.name;

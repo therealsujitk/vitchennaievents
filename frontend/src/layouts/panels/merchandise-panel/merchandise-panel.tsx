@@ -118,7 +118,7 @@ export default class MerchandisePanel extends React.Component<{}, MerchandisePan
         'x-password': this.password,
       };
 
-      const response = await new Network().doPost("/api/latest/user/merchandise", { headers: credentials, body: {} });
+      const response = await new Network().doPost("/profile/api/latest/user/merchandise", { headers: credentials, body: {} });
       const merchandise: Merchandise[] = [];
 
       for (var i = 0; i < response.merchandise.length; ++i) {

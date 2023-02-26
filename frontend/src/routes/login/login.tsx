@@ -70,7 +70,7 @@ export default class Login extends React.Component<{}, LoginState> {
     };
 
     try {
-      await new Network().doPost('/api/latest/user/login', { headers: credentials, body: {} });
+      await new Network().doPost('/profile/api/latest/user/login', { headers: credentials, body: {} });
       initSession(credentials["x-username"]!, credentials["x-password"]!);
     } catch (err) {
       this.setErrorMessage(err as string);

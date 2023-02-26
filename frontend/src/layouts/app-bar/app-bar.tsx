@@ -138,7 +138,7 @@ export default class AppBar extends React.Component<AppBarProps, AppBarState> {
   }
 
   signOut = (destroySession: AppContextInterface['destroySession']) => {
-    new Network(this.apiKey).doPost('/api/latest/session/logout');
+    new Network(this.apiKey).doPost('/profile/api/latest/session/logout');
     destroySession();
   }
 }

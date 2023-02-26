@@ -120,7 +120,7 @@ export default class EventsPanel extends React.Component<{}, EventsPanelState> {
         'x-password': this.password,
       };
 
-      const response = await new Network().doPost("/api/latest/user/events", { headers: credentials, body: {} });
+      const response = await new Network().doPost("/profile/api/latest/user/events", { headers: credentials, body: {} });
       const events: Event[] = [];
 
       for (var i = 0; i < response.events.length; ++i) {
