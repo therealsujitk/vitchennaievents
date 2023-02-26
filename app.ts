@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   res.redirect('/profile');
 });
 
+app.get('/profile*', (req, res) => {
+  res.status(200).sendFile(__dirname + '/public/index.html');
+});
+
 app.all('/*', (req, res) => {
   res.status(404).json({
     error: 'Invalid API endpoint or request method.'

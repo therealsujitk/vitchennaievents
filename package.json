@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "API server for vitchennaievents.com",
   "main": "bin/server.ts",
-  "repository": "https://github.com/therealsujitk/nodejs-vitchennaievents-api",
+  "repository": "https://github.com/therealsujitk/vitchennaievents",
   "author": "Sujit Kumar",
   "license": "MIT",
   "private": true,

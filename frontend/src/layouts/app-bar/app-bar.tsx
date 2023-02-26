@@ -86,9 +86,8 @@ export default class AppBar extends React.Component<AppBarProps, AppBarState> {
       </Dialog>
     )
 
-    const profileItems = AppBar.items;
-    profileItems.signOut.onClick = () => this.openSignOutDialog();
-    profileItems.editProfile.onClick = () => this.openProfileDialog();
+    AppBar.items.signOut.onClick = () => this.openSignOutDialog();
+    AppBar.items.editProfile.onClick = () => this.openProfileDialog();
 
     return (
       <>
@@ -99,7 +98,7 @@ export default class AppBar extends React.Component<AppBarProps, AppBarState> {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 1 }}
+              sx={{ mr: 1, color: 'black' }}
               onClick={() => this.props.onMenuClick()}
             >
               <MenuIcon />
@@ -108,7 +107,7 @@ export default class AppBar extends React.Component<AppBarProps, AppBarState> {
               { this.props.title }
             </Typography>
             <MediaQuery query={(theme) => theme.breakpoints.up('sm')}>
-              {(theme) => theme ? <ProfileButton items={profileItems} /> : <></>}
+              {(theme) => theme ? <ProfileButton items={AppBar.items} /> : <></>}
             </MediaQuery>
           </Toolbar>
         </MaterialAppBar>

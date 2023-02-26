@@ -1,4 +1,5 @@
 import { Event, Storefront } from "@mui/icons-material";
+import { Divider } from "@mui/material";
 import MaterialDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -7,6 +8,8 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import React from "react";
 import { Link } from "react-router-dom";
+import { MediaQuery } from "../../components";
+import AppBar from "../app-bar/app-bar";
 
 interface DrawerProps {
   /**
@@ -82,6 +85,19 @@ export default class Drawer extends React.Component<DrawerProps, DrawerState> {
               </ListItemButton>
             </Link>
           ))}
+          <MediaQuery query={(theme) => theme.breakpoints.up('sm')}>
+            {(result) => !result ? (
+              <>
+                <Divider />
+                {Object.entries(AppBar.items).map(([key, item]) => (
+                  <ListItemButton selected={key === this.state.selected} onClick={() => item.onClick()}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                ))}
+              </>
+            ) : <></>}
+          </MediaQuery>
         </List>
       </MaterialDrawer>
     );

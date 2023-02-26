@@ -17,6 +17,7 @@ const StyledButton = styled(MaterialButton, {
     return !propertyKeys.has(propName.toString())
   },
 })<ButtonProps>(() => ({
+  color: 'black',
   fontWeight: 'bold',
   textTransform: 'none',
 }));
